@@ -3,7 +3,7 @@ package itismeucci.fi;
 import java.util.ArrayList;
 
 public class Messaggio {
-    ArrayList<Biglietto> lista = new ArrayList<>();
+    public ArrayList<Biglietto> lista = new ArrayList<>();
 
     public Messaggio() {
     }

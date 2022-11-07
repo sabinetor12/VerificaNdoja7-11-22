@@ -8,6 +8,10 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        Client cliente = new Client();
+        try {
+            cliente.comunica();
+        } catch (Exception e) {}
+        
     }
 }

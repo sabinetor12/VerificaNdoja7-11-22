@@ -27,8 +27,8 @@ public class Client {
         System.out.println("la lista è "+StringaRicevuta);
         System.out.println("scegli cosa comprare (id)");
         String StringaUtente = tastiera.readLine(); //3
-        outVersoServer.writeBytes(StringaUtente +"\n");
-        System.out.println("risposta:" + inDalServer.readLine());
+        outVersoServer.writeBytes(StringaUtente +"\n"); // quello da comprare
+        System.out.println("risposta:" + inDalServer.readLine()); //risposta del server
         miosocket.close();
     }
 }

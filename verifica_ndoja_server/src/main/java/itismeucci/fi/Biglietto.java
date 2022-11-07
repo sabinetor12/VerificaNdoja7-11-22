@@ -10,7 +10,7 @@ public class Biglietto {
 
     public Biglietto(String numero){
         this.numero = numero;
-        id = 0;
+        id = conta;
         conta++;
     }
 

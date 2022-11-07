@@ -29,7 +29,29 @@ public class Utenti extends Thread {
         {
             String msgDaInv = objectMapper.writeValueAsString(msg);
             outVersoClient.writeBytes(msgDaInv + "\n"); //2 manda la lista completa
+            //3 Aspetta cosa vuole comprare il client
+            String daComprare = inDalClient.readLine();
+            String[] splited = daComprare.split(" ");
+            msgDaInv = "";
+            //cerca se quello che il client vuole comprare è disponibile
             
+            for (String i : splited) {
+                Boolean trovato = false;
+                for (Biglietto j : msg.lista) {
+                    if(j.getId() == Integer.parseInt(i))
+                    {
+                        msgDaInv = msgDaInv + "biglietto: " + j.toString();
+                        trovato = true;
+                        msg.lista.remove(j);
+                        break;
+                    }
+                }
+                if(!trovato){
+                    msgDaInv = msgDaInv + " il messaggio con id: " + i +" non è disponibile     ";
+                }
+            }
+            outVersoClient.writeBytes(msgDaInv + "\n");
+            client.close();
         }
         } catch (Exception e) {}
         
