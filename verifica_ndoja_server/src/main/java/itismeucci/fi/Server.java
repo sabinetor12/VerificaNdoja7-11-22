@@ -26,7 +26,7 @@ public class Server {
         for (;;) {
             Socket client = server.accept();
             listaUtenti.add(client);
-            (new Utenti(client,listaUtenti,msg)).start();
+            (new Utenti(client,listaUtenti,msg,server)).start();
         }
         
     }
