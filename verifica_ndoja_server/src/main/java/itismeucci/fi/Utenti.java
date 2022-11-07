@@ -28,6 +28,7 @@ public class Utenti extends Thread {
             String jsonRicevuto = inDalClient.readLine(); // 1
             Messaggio msgRicevuto = objectMapper.readValue(jsonRicevuto, Messaggio.class);
             if (msgRicevuto.lista.isEmpty()) {
+                
                 String msgDaInv = objectMapper.writeValueAsString(msg);
                 outVersoClient.writeBytes(msgDaInv + "\n"); // 2 manda la lista completa
                 // 3 Aspetta cosa vuole comprare il client

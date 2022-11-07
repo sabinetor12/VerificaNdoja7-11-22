@@ -1,0 +1,5 @@
+./verifica_ndoja_client/target
+./verifica_ndoja_server/target
+./verifica_ndoja_client/src/test
+./verifica_ndoja_server/src/test
+
